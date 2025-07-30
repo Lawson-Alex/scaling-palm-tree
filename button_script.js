@@ -22,7 +22,6 @@ UI.getEntity().then(entity => {
   </div>`
 
   // Render the appropriate HTML
-  UI.setHeight(34);
   UI.setHtml(html);
 
 }).catch(error => {
@@ -32,7 +31,6 @@ UI.getEntity().then(entity => {
                     ${buttonText}
                   </div>`;
 
-  UI.setHeight(34);
   UI.setHtml(html);
 });
 
