@@ -1,5 +1,5 @@
 // Define the styles for the button (used for both enabled and disabled states)
-const baseStyle = "display: inline-block; color: white; padding: 8px 12px; text-align: center; border-radius: 5px;";
+const baseStyle = "display: inline-block; color: white; padding: 8px 12px; text-align: center; border-radius: 5px; text-decoration: none;";
 const enabledStyle = "background-color: #f15725; cursor: pointer;";
 const disabledStyle = "background-color: #a0a0a0; cursor: not-allowed;"; // Greyed out for disabled
 const buttonText = "View Lineage in Alex";
@@ -7,22 +7,20 @@ const navigationUrl = "https://reltio-alex.alex4im.com/explore/table#/?action=mu
 
 UI.getEntity().then(entity => {
   // Safely get the URL using optional chaining
-  const navigationLink = entity?.attributes?.WebsiteURL?.[0]?.value;
-  let html;
-
-  if (navigationLink) {
-    // URL FOUND: Create a real link (<a> tag) styled like a button
-    console.log("Navigation Link found: " + navigationLink);
-    html = `<a href="${navigationLink}" target="_blank" style="${baseStyle} ${enabledStyle}">
-                  ${buttonText}
-                </a>`;
-  } else {
-    // URL NOT FOUND: Create a non-clickable <div> styled as a disabled button
-    console.warn("WebsiteURL attribute is missing or empty, using default URL");
-    html = `<a href="${navigationUrl}" target="_blank" style="${baseStyle} ${enabledStyle}">
-                  ${buttonText}
-                </a>`;
-  }
+  let html = `<div id="alex">
+    <div id="alex-buttons">
+    <h3>Asset Lineage</h3>
+    <a href="${navigationLink}" target="_blank" style="display: inline-block; color: white; padding: 8px 12px; text-align: center; border-radius: 5px; background-color: #f15725; cursor: pointer;text-decoration: none;">
+    View Lineage in Alex
+    </a>
+    <a id="preview-lineage" ui-actions='click' style="display: inline-block; color: white; padding: 8px 12px; text-align: center; border-radius: 5px; background-color: #f15725; cursor: pointer;text-decoration: none;">
+    Preview Lineage in Reltio
+    </a>
+    </div>
+    <br>
+    <div id="lineage-content">
+    </div>
+  </div>`
 
   // Render the appropriate HTML
   UI.setHeight(34);
@@ -37,4 +35,13 @@ UI.getEntity().then(entity => {
 
   UI.setHeight(34);
   UI.setHtml(html);
+});
+
+UI.onEvent((eventType, data) => {
+    //listening for an event
+    if(eventType === "uiAction" && data.type === "click") {
+        if (data.id === "preview-lineage"){ 
+            console.log("Preview Lineage button clicked");
+        }
+    }
 });
