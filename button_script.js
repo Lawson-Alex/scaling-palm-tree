@@ -9,6 +9,10 @@ UI.getEntity().then(entity => {
     const navigationLink = entity?.attributes?.WebsiteURL?.[0]?.value;
     let html;
 
+    UI.getUiConfiguration().then(function(jsonUiConfiguration){
+      console.log(JSON.stringify(jsonUiConfiguration));
+    });
+
     if (navigationLink) {
         // URL FOUND: Create a real link (<a> tag) styled like a button
         console.log("Navigation Link found: " + navigationLink);
