@@ -10,7 +10,7 @@ UI.getEntity().then(entity => {
   let html = `<div id="alex">
     <div id="alex-buttons">
     <h3>Asset Lineage</h3>
-    <a href="${navigationLink}" target="_blank" style="display: inline-block; color: white; padding: 8px 12px; text-align: center; border-radius: 5px; background-color: #f15725; cursor: pointer;text-decoration: none;">
+    <a href="${navigationUrl}" target="_blank" style="display: inline-block; color: white; padding: 8px 12px; text-align: center; border-radius: 5px; background-color: #f15725; cursor: pointer;text-decoration: none;">
     View Lineage in Alex
     </a>
     <a id="preview-lineage" ui-actions='click' style="display: inline-block; color: white; padding: 8px 12px; text-align: center; border-radius: 5px; background-color: #f15725; cursor: pointer;text-decoration: none;">
