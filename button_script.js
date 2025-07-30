@@ -1,7 +1,7 @@
 //define button
 var html =
-"<div id='test-button' ui-actions='click'>\n" +
-"   Execute\n" +
+"<div id='test-button' ui-actions='click' style='background-color: #f15725; color: white; padding: 8px 12px; text-align: center; border-radius: 5px; cursor: pointer;'>\n" +
+"View Lineage in Alex\n" +
 "</div>";
 UI.setHeight(34);
 UI.setHtml(html);
