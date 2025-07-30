@@ -9,8 +9,11 @@ UI.onEvent((eventType, data) => {
     //listening for an event
     if(eventType === "uiAction" && data.type === "click") {
         if (data.id === "test-button"){ 
-            //sending the request
-            console.log("Button clicked: " + data)
+            // Redirect to Alex
+            UI.getEntity().then(function(entity){
+               console.log(JSON.stringify(entity))
+            });
+            // window.location.href = "";
         }
     }
 });
