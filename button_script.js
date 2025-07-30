@@ -10,8 +10,16 @@ UI.getEntity().then(entity => {
     let html;
 
     UI.getUiConfiguration().then(function(jsonUiConfiguration){
+      console.log("UI Configuration");
       console.log(JSON.stringify(jsonUiConfiguration));
     });
+
+    UI.getConfiguration().then(function(jsonApiConfiguration){
+       console.log("Configuration");
+       console.log(JSON.stringify(jsonApiConfiguration));
+    });
+
+    
 
     if (navigationLink) {
         // URL FOUND: Create a real link (<a> tag) styled like a button
