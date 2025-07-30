@@ -11,9 +11,14 @@ UI.onEvent((eventType, data) => {
         if (data.id === "test-button"){ 
             // Redirect to Alex
             UI.getEntity().then(function(entity){
-               console.log(JSON.stringify(entity))
+              var navigationLink = entity?.attributes?.WebsiteURL?.[0]?.value;
+              if (navigationLink) {
+                  console.log("Navigation Link: " + navigationLink)
+                  window.location.href = navigationLink;
+              } else {
+                console.log("No navigation link found")
+              }
             });
-            // window.location.href = "";
         }
     }
 });
