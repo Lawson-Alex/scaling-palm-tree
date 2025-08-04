@@ -5,7 +5,7 @@ const disabledStyle = "background-color: #a0a0a0; cursor: not-allowed;"; // Grey
 const buttonText = "View Lineage in Alex";
 const navigationUrl = "https://reltio-alex.alex4im.com/explore/table#/?action=multiEndToEnd&selectAll=true&exceedsMax=false&query=BUS_NAME%3D~'Customer%20Entity'&dls=true"
 
-const mainHtml = `<div id="alex-buttons" style="padding: 8px 12px; text-align: center; border-radius: 5px;">
+const mainHtml = `<div id="alex-buttons" style="padding: 8px 12px; border-radius: 5px;">
     <h3>Asset Lineage</h3>
     <a href="${navigationUrl}" target="_blank" style="display: inline-block; color: white; padding: 8px 12px; text-align: center; border-radius: 5px; background-color: #f15725; cursor: pointer;text-decoration: none;">
     View Lineage in Alex
