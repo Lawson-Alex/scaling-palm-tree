@@ -117,7 +117,7 @@ UI.getEntity().then(entity => {
   // Render the screen with a loading icon
   UI.setHtml(html);
 
-  setTimeout.apply(()=> {
+  setTimeout(()=> {
     // After a delay, display the full screen content. The delay is to simulate the loading time required to read data from Alex or calculate the lineage summary on the fly.
     const html = `<div id="alex">
         ${mainHtml}
