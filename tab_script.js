@@ -60,7 +60,7 @@ const mainHtml = `
       }
     </style>
 
-    <div id="alex-buttons" style="padding: 8px 12px; border-radius: 5px;">
+    <div id="alex-buttons">
       <h3>Asset Lineage</h3>
       <a href="${navigationUrl}" target="_blank" style="display: inline-block; color: white; padding: 8px 12px; text-align: center; border-radius: 5px; background-color: #f15725; cursor: pointer;text-decoration: none;">
       View Lineage in Alex
@@ -100,7 +100,7 @@ const lineageContent = `
 
 UI.getEntity().then(entity => {
   // Safely get the URL using optional chaining
-  let html = `<div id="alex">
+  let html = `<div id="alex" style="padding: 8px 12px; border-radius: 5px;">
     ${mainHtml}
     <br>
     <div>
@@ -119,7 +119,7 @@ UI.getEntity().then(entity => {
 
   setTimeout(()=> {
     // After a delay, display the full screen content. The delay is to simulate the loading time required to read data from Alex or calculate the lineage summary on the fly.
-    const html = `<div id="alex">
+    const html = `<div id="alex" style="padding: 8px 12px; border-radius: 5px;">
         ${mainHtml}
         <br>
         ${lineageContent}
